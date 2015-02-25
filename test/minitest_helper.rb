@@ -18,17 +18,17 @@ class ControllerTest < Minitest::Spec
   include Rails.application.routes.url_helpers
   include ActiveSupport::Testing::SetupAndTeardown
   include ActionController::TestCase::Behavior
-  # include Devise::TestHelpers
+  include Devise::TestHelpers
   register_spec_type(/Controller$/, self)
 
   before do
     @routes = Rails.application.routes
   end
 
-  # def login_user
-  #   user = create(:user)
-  #   user.confirm!
-  #   sign_in(user)
-  #   user
-  # end
+  def login_user
+    user = create(:user)
+    user.confirm!
+    sign_in(user)
+    user
+  end
 end
