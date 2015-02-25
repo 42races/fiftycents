@@ -9,11 +9,19 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'puma'
 gem 'slim'
 gem 'ionicons-rails'
 
-group :development, :test do
+group :development do
+  gem 'spring'
+  gem 'letter_opener'
+end
+
+group :developemnt, :test do
   gem 'pry'
+  gem 'minitest'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'minitest-reporters'
 end
