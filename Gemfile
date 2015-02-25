@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'puma'
 gem 'slim'
 gem 'ionicons-rails'
+gem 'devise'
 
 group :development do
   gem 'spring'
