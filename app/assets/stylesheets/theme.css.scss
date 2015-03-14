@@ -1,7 +1,44 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: $white-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   color: $text-color;
+  margin-bottom: 60px;
+}
+
+a.action {
+  font-size: 12px;
+  span {
+    margin-left: 2px;
+  }
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: $gray-color;
+  padding: $base-padding;
+  border-top: solid 1px $border-color;
+
+  a { i { font-size: $base-icon-size; } }
+}
+
+
+form.profile-edit {
+  .form-group {
+    width: 300px;
+
+    .link-back {
+      margin-left: 10px;
+    }
+  }
 }

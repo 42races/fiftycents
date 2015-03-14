@@ -13,14 +13,16 @@ gem 'puma'
 gem 'slim'
 gem 'ionicons-rails'
 gem 'devise'
+gem 'rmagick'
+gem 'carrierwave'
 
 group :development do
   gem 'spring'
+  gem 'pry'
   gem 'letter_opener'
 end
 
 group :developemnt, :test do
-  gem 'pry'
   gem 'minitest'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
