@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314064549) do
+ActiveRecord::Schema.define(version: 20150315174605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coins", force: true do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.text     "description"
+    t.string   "material"
+    t.integer  "thickness"
+    t.integer  "diameter"
+    t.string   "country"
+    t.integer  "weight"
+    t.string   "mint"
+    t.string   "spape"
+    t.string   "tags",        default: [], array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", force: true do |t|
     t.string   "phone_no"
