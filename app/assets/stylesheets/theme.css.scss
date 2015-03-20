@@ -19,6 +19,13 @@ a.action {
   }
 }
 
+a {
+  color: #777;
+  &:hover {
+    color: #666;
+  }
+}
+
 
 footer {
   position: absolute;

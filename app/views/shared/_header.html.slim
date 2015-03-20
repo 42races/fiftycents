@@ -15,7 +15,7 @@ nav.navbar.navbar-default
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       form.navbar-form.navbar-left role="search"
         .form-group
-          input.form-control placeholder="Search" type="text" /
+          input.form-control placeholder="Search topic: eg: football" type="text" /
         | &nbsp;
         button.btn.btn-default type="submit"  Go
       ul.nav.navbar-nav.navbar-right
@@ -27,9 +27,9 @@ nav.navbar.navbar-default
         - else
 
           li
-            = button_to '#', class: "btn btn-default navbar-btn", method: :get do
+            = button_to new_post_path, class: "btn btn-default navbar-btn", method: :get do
               i.ion-plus
-              | &nbsp;Add Coin
+              | &nbsp;New Topic
           li.dropdown
             a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
               | Settings

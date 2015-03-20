@@ -11,7 +11,7 @@ class Profile < ActiveRecord::Base
   end
 
   def set_attributes!
-    self.name = user.name
+    self.name     = user.name
     self.username = user.username
   end
 end

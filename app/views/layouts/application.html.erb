@@ -8,15 +8,26 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
+
 <body>
   <%= render 'shared/header' %>
+
   <% if notice.present? %>
-    <p class="notice"><%= notice %></p>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
   <% end %>
+
   <% if alert.present? %>
-    <p class="alert"><%= alert %></p>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= alert %>
+    </div>
   <% end %>
+
   <div class="container"><%= yield %></div>
+
   <%= render 'shared/footer' %>
 </body>
 </html>

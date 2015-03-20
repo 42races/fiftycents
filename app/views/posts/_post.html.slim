@@ -1,0 +1,37 @@
+li.list-group-item.post-item
+  .post-header
+    span.posted-by
+      = link_to post.user.name, profile_path(post.user)
+    span.posted-time
+      = time_ago_in_words(post.created_at)
+    .dropdown.pull-right
+      button#post-item-dropdown.btn.btn-default.btn-xs.dropdown-toggle aria-expanded='true' data-toggle='dropdown'
+        span.caret
+      ul.dropdown-menu aria-labelledby='post-item-dropdown' role='menu'
+        li role='presentation'
+          = link_to 'Share', '#', role: 'menuitem'
+
+        li role='presentation'
+          = link_to 'Edit', edit_post_path(post), role: 'menuitem'
+
+        li role='presentation'
+          = link_to 'Delete', posts_path(post), method: :delete, role: 'menuitem'
+
+        li role='presentation'
+          = link_to 'Report', '#', method: :delete, role: 'menuitem'
+
+  .post-content= link_to post.content, post_path(post)
+  .post-meta
+    span.tags= h_list_tags(post.tags)
+  .post-footer
+    span.comment
+      = link_to 'Comment', '#', class: 'btn btn-default btn-xs'
+      = link_to 'Bookmark', '#', class: 'btn btn-default btn-xs'
+
+    span.pull-right.post-actions
+      = link_to '#', title: 'Upvote', class: 'btn btn-default btn-xs' do
+        i.ion-thumbsup
+        | &nbsp;Upvote
+      = link_to '#', title: 'Downvote', class: 'btn btn-default btn-xs' do
+        i.ion-thumbsdown
+        | &nbsp;Downvote

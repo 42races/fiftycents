@@ -1,0 +1,50 @@
+.post-item {
+  .post-header {
+    .posted-by {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .posted-time {
+      margin-left: 7px;
+      font-size: 10px;
+    }
+  }
+
+  .post-content {
+    margin: 5px 0;
+
+    a {
+      font-family: serif;
+      font-size: 18px;
+      line-height: 1.4em;
+      font-size: 18px;
+      color: #666;
+
+      &:hover {
+        text-decoration: none;
+        color: #666;
+      }
+    }
+  }
+
+  .post-meta {
+    margin-bottom: 10px;
+    font-size: 10px;
+    .tags {
+      .tag {
+        margin-right: 7px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .post-footer {
+    .comment {
+      a { margin-right: 7px; }
+    }
+    .post-actions {
+      a { margin-left: 7px; }
+    }
+  }
+}
