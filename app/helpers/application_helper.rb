@@ -6,4 +6,8 @@ module ApplicationHelper
     end
     str.html_safe
   end
+
+  def h_profile_path(user)
+    "/#{user.username || '#'}"
+  end
 end

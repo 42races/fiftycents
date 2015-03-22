@@ -1,10 +1,15 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:public_profile]
   before_action :load_profile, only: [:show, :edit, :update]
 
   def show
     @profile = current_user.profile
     @profile.set_attributes! if @profile.present?
+  end
+
+  def public_profile
+    @user    = User.find_by_username(params[:username])
+    @profile = @user.profile
   end
 
   def edit
@@ -36,7 +41,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:name, :username, :phone_no, :dob, :place, :country)
+    params.require(:profile).permit(:name, :avatar, :username, :phone_no, :dob, :place, :country)
   end
 
 end

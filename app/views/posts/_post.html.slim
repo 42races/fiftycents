@@ -1,7 +1,7 @@
 li.list-group-item.post-item
   .post-header
     span.posted-by
-      = link_to post.user.name, profile_path(post.user)
+      = link_to post.user.name, h_profile_path(post.user)
     span.posted-time
       = time_ago_in_words(post.created_at)
     .dropdown.pull-right

@@ -19,7 +19,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    process :resize_to_fit => [100, 100]
+    process :resize_to_fit => [140, 140]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -35,4 +35,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  def default_url
+    'avatar.png'
+  end
 end

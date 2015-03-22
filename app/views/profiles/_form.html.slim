@@ -1,6 +1,10 @@
 = form_for @profile, role: 'form', html: { class: 'profile-edit' } do |f|
 
   .form-group
+    = f.label :avatar, 'Proile pic'
+    = f.file_field :avatar
+
+  .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control', placeholder: 'Deepak Kumar'
 
@@ -26,3 +30,4 @@
 
   .form-group
     = f.submit 'Save', class: 'btn btn-default'
+    = link_to 'Cancel', profile_path, class: 'link-back'

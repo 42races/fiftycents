@@ -47,5 +47,19 @@ form.profile-edit {
     .link-back {
       margin-left: 10px;
     }
+
+    select {
+      border: solid 1px $border-color;
+      margin-left: 10px;
+      height: 30px;
+      background-color: #fff;
+      float: right;
+    }
   }
+}
+
+
+.image-avatar {
+  width: 140px;
+  height: 140px;
 }

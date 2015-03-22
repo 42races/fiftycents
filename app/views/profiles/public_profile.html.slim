@@ -1,0 +1,13 @@
+.row
+  .col-md-6
+    p= image_tag(@user.avatar.thumb.url, class: 'image-rounded image-avatar')
+    p= @user.name
+    p= "@#{@user.username}"
+    p= @profile.place
+    p= @profile.country
+    p
+      label Posts
+      label= @user.posts.count
+    p
+      label Bookmarks
+      label 10
