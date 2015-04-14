@@ -20,12 +20,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post.set_tag_string!
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = current_user.posts.new(post_params)
+    @post.set_tags!(post_params)
 
     respond_to do |format|
       if @post.save
@@ -41,6 +43,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post.set_tags!(post_params)
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -70,6 +74,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :tags)
+      params.require(:post).permit(:content, :tag_string)
     end
 end
