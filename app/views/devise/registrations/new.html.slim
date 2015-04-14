@@ -1,0 +1,27 @@
+.row
+  .col-md-4
+    h2 Register
+
+    = form_for(resource, :as => resource_name,
+      :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+
+      .form-group
+        = f.label :email
+        = f.email_field :email, :autofocus => true, class: 'form-control',
+          placeholder: 'eg: deepak@example.com'
+
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control',
+          placeholder: 'Minimum 6 chars'
+
+      .form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: 'form-control',
+          placeholder: 'Retype password'
+
+      .form-group
+        = f.submit 'Register', class: 'btn btn-default form-control'
+
+      = render 'devise/shared/links'

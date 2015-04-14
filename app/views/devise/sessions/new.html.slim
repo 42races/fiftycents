@@ -1,0 +1,23 @@
+.row
+  .col-md-4
+    h2 Login
+
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .form-group
+        = f.label :email
+        = f.email_field :email, autofocus: true, class: 'form-control',
+          placeholder: 'Eg: deepak@example.com'
+
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control', placeholder: '*****'
+
+      .form-group
+        = f.check_box :remember_me
+        | &nbsp;
+        = f.label :remember_me
+
+      .form-group
+        = f.submit 'Login', class: 'btn btn-default form-control'
+
+      = render 'devise/shared/links'
