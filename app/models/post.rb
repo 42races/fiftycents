@@ -1,7 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  has_many :replies, foreign_key: :reply_to
 
   attr_accessor :tag_string
+
+  scope :all_posts, -> {  where(reply_to: nil) }
 
   def set_tags!(args)
     str = args[:tag_string]

@@ -1,13 +1,15 @@
-= form_for(@post) do |f|
-  - if @post.errors.any?
+= form_for(post) do |f|
+  - if post.errors.any?
     .error-report
       p
-        = pluralize(@post.errors.count, "error")
+        = pluralize(post.errors.count, "error")
         | prohibited this post from being saved
 
       ul
-        - @post.errors.full_messages.each do |message|
+        - post.errors.full_messages.each do |message|
           li= message
+
+  = f.hidden_field :reply_to
 
   .form-group
     = f.label :content

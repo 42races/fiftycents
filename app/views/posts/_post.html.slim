@@ -25,7 +25,7 @@ li.list-group-item.post-item
     span.tags= h_list_tags(post.tags)
   .post-footer
     span.comment
-      = link_to 'Comment', '#', class: 'btn btn-default btn-xs'
+      = link_to h_reply_count(post), '#', class: 'btn btn-default btn-xs'
       = link_to 'Bookmark', '#', class: 'btn btn-default btn-xs'
 
     span.pull-right.post-actions

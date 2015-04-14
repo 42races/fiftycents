@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320182732) do
+ActiveRecord::Schema.define(version: 20150414131417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150320182732) do
     t.integer  "downvote",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "reply_to"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree

@@ -2,3 +2,7 @@
   .col-md-8
     ul.list-group
       = render 'post', post: @post
+
+    h2 Reply
+    = render 'form', post: @reply
+    = render 'posts', posts: @replies

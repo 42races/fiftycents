@@ -5,12 +5,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all_posts
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @reply = Post.new(reply_to: @post.id)
+    @replies = @post.replies
   end
 
   # GET /posts/new
@@ -26,7 +28,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.new(post_params)
+    @post = current_user.posts.new(post_create_params)
     @post.set_tags!(post_params)
 
     respond_to do |format|
@@ -73,7 +75,12 @@ class PostsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def post_create_params
+      post_params.merge(params.require(:post).permit(:reply_to))
+    end
+
     def post_params
       params.require(:post).permit(:content, :tag_string)
     end
+
 end
