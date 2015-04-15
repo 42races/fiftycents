@@ -15,4 +15,12 @@ class Post < ActiveRecord::Base
   def set_tag_string!
     self.tag_string = tags.join(' ')
   end
+
+  def upvote!
+    update_attribute(:upvote, self.upvote + 1)
+  end
+
+  def downvote!
+    update_attribute(:downvote, self.downvote + 1)
+  end
 end

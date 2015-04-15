@@ -24,14 +24,4 @@ li.list-group-item.post-item
   .post-meta
     span.tags= h_list_tags(post.tags)
   .post-footer
-    span.comment
-      = link_to h_reply_count(post), '#', class: 'btn btn-default btn-xs'
-      = link_to 'Bookmark', '#', class: 'btn btn-default btn-xs'
-
-    span.pull-right.post-actions
-      = link_to '#', title: 'Upvote', class: 'btn btn-default btn-xs' do
-        i.ion-thumbsup
-        | &nbsp;Upvote
-      = link_to '#', title: 'Downvote', class: 'btn btn-default btn-xs' do
-        i.ion-thumbsdown
-        | &nbsp;Downvote
+    = render 'posts/post_footer', post: post

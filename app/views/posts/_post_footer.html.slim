@@ -1,0 +1,29 @@
+span.comment
+  = link_to h_reply_count(post), '#',
+    class: 'btn btn-default btn-xs'
+
+  - if policy(post).already_bookmarked?
+    = link_to 'Bookmark', bookmarks_path(post_id: post),
+      class: 'btn btn-default btn-xs bookmark on',
+      method: :delete,
+      remote: true
+  - else
+    = link_to 'Bookmark', bookmarks_path(post_id: post),
+      class: 'btn btn-default btn-xs bookmark',
+      method: :post,
+      remote: true
+
+span.pull-right.post-actions
+  = link_to upvote_vote_path(post), title: 'Upvote',
+    class: 'btn btn-default btn-xs upvote',
+    method: :post,
+    remote: true do
+    i.ion-thumbsup
+    | &nbsp;Upvote
+
+  = link_to downvote_vote_path(post), title: 'Downvote',
+    class: 'btn btn-default btn-xs downvote',
+    method: :post,
+    remote: true do
+    i.ion-thumbsdown
+    | &nbsp;Downvote
