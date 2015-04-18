@@ -1,0 +1,1 @@
+a.btn.btn-default.btn-xs.add-bookmark data-method='post' data-remote='true' href='/bookmarks?post_id={{id}}' Bookmark

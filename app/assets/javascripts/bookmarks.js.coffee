@@ -1,11 +1,18 @@
 $ ->
-  $(document).on 'ajax:success', '.bookmark', (e, data) ->
+  $(document).on 'ajax:success', '.add-bookmark', (e, data) ->
     el = $(this)
 
     if data.status
-      el.toggleClass('on')
-      verb = el.attr('data-method')
-      verb = (verb == 'post') ? 'delete' : 'post'
-      el.attr('data-method', verb)
+      t = h.template('bookmarks/remove', data)
+      el.replaceWith(t)
+    else
+      console.log(data.message)
+
+  $(document).on 'ajax:success', '.remove-bookmark', (e, data) ->
+    el = $(this)
+
+    if data.status
+      t = h.template('bookmarks/add', data)
+      el.replaceWith(t)
     else
       console.log(data.message)

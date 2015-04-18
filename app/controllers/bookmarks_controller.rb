@@ -11,7 +11,7 @@ class BookmarksController < ApplicationController
     bm = current_user.bookmarks.new(post: @post)
 
     if bm.save
-      render json: { status: true }
+      render json: { status: true, id: @post.id }
     else
       render json: { status: false, message: bm.errors.full_messages }
     end
@@ -22,7 +22,7 @@ class BookmarksController < ApplicationController
 
     if bm.present?
       bm.destroy!
-      render json: { status: true }
+      render json: { status: true, id: @post.id }
     else
       render json: { status: false, message: 'Bookmark not found' }
     end

@@ -15,6 +15,7 @@ gem 'ionicons-rails'
 gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'handlebars_assets'
 
 group :development do
   gem 'spring'

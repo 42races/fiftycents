@@ -1,0 +1,1 @@
+a.btn.btn-default.btn-xs.remove-bookmark data-method='delete' data-remote='true' href='/bookmarks?post_id={{id}}' Bookmark
