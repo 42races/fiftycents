@@ -6,6 +6,6 @@ class PostPolicy
   end
 
   def already_bookmarked?
-    @user.bookmarks.where(post_id: @post.id).size != 0
+    @user && @user.bookmarks.where(post_id: @post.id).size != 0
   end
 end
