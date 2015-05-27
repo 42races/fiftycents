@@ -3,12 +3,12 @@ class VotesController < ApplicationController
   before_action :load_post
 
   def upvote
-    @post.upvote!
+    VoteService.new(current_user, @post).upvote
     render 'posts/show.json'
   end
 
   def downvote
-    @post.downvote!
+    VoteService.new(current_user, @post).downvote
     render 'posts/show.json'
   end
 

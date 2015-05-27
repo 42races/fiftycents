@@ -7,7 +7,6 @@ module PolicyHelper
       klass_name = obj.class.to_s
       policy_class = "#{klass_name}Policy"
     end
-
     policy_class.constantize.new(current_user, obj)
   end
 end

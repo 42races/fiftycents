@@ -15,14 +15,14 @@ span.comment
 
 span.pull-right.post-actions
   = link_to upvote_vote_path(post), title: 'Upvote',
-    class: 'btn btn-default btn-xs upvote',
+    class: "btn btn-default btn-xs upvote #{'disabled' unless policy(post).upvote?}",
     method: :post,
     remote: true do
     i.ion-thumbsup
     | &nbsp;Upvote
 
   = link_to downvote_vote_path(post), title: 'Downvote',
-    class: 'btn btn-default btn-xs downvote',
+    class: "btn btn-default btn-xs downvote #{'disabled' unless policy(post).downvote?}",
     method: :post,
     remote: true do
     i.ion-thumbsdown

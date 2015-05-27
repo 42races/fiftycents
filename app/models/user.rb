@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :posts,  dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   validates :name, presence: true, allow_nil: true, length: 2..32
 
