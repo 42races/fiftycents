@@ -17,4 +17,9 @@ module ApplicationHelper
     return 'Reply' if count == 0
     "#{'Reply'.pluralize(count)} (#{count})"
   end
+
+  def h_render(text)
+    @post_renderer ||= PostRenderer.new
+    @post_renderer.render(text).html_safe
+  end
 end

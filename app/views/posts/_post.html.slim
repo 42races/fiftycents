@@ -20,7 +20,7 @@ li.list-group-item.post-item
         li role='presentation'
           = link_to 'Report', '#', method: :delete, role: 'menuitem'
 
-  .post-content= link_to post.content, post_path(post)
+  .post-content= h_render(post.content)
   .post-meta
     span.tags= h_list_tags(post.tags)
   .post-footer

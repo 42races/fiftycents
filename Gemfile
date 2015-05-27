@@ -16,6 +16,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'handlebars_assets'
+gem 'rinku'
 
 group :development do
   gem 'spring'
