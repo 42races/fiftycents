@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   end
 
   def public_profile
-    @user    = User.find_by_username(params[:username])
+    @user    = User.find_by_username(params[:username]) || User.find_by_id(params[:username])
     @profile = @user.profile
   end
 

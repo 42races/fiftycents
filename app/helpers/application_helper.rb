@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def h_profile_path(user)
-    "/#{user.username || '#'}"
+    "/#{user.username || user.id}"
   end
 
   def h_reply_count(post)
@@ -21,5 +21,9 @@ module ApplicationHelper
   def h_render(text)
     @post_renderer ||= PostRenderer.new
     @post_renderer.render(text).html_safe
+  end
+
+  def h_name(user)
+    (user.name || 'anonymous').split(' ').first.capitalize
   end
 end
