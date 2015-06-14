@@ -2,17 +2,17 @@ class User < ActiveRecord::Base
 
   USERNAME_REGEX = /\A[a-zA-Z][a-zA-Z0-9_]*\z/
   BLACKLISTED_USERNAMES = %w(admin root 50cents pages posts replies users
-  profile reports votes)
+  profile reports votes search searches)
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :avatar, AvatarUploader
 
-  has_one :profile, dependent: :destroy
-  has_many :posts,  dependent: :destroy
+  has_one  :profile,   dependent: :destroy
+  has_many :posts,     dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-  has_many :votes, dependent: :destroy
+  has_many :votes,     dependent: :destroy
 
   validates :name, presence: true, allow_nil: true, length: 2..32
 

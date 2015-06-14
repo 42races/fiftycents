@@ -3,7 +3,7 @@ module ApplicationHelper
     return if tags.blank?
     str = ''
     tags.each do |tag|
-      str += link_to tag, '#', class: 'tag'
+      str += link_to tag, "/search/tags/#{tag}", class: 'tag'
     end
     str.html_safe
   end

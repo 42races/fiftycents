@@ -15,6 +15,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :search,  only: [:create] do
+    collection do
+      get :tags, path: '/tags/:tag'
+    end
+  end
+
   resource :profile, only: [:new, :show, :edit, :update]
 
   root 'posts#index'
