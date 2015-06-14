@@ -13,11 +13,12 @@ nav.navbar.navbar-default
           em .co
     /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      form.navbar-form.navbar-left role="search"
+      = form_tag '/search', class: 'navbar-form navbar-left', role: 'form' do
         .form-group
-          input.form-control placeholder="Search topic: eg: football" type="text" /
-        | &nbsp;
-        button.btn.btn-default type="submit"  Go
+          .input-group
+            = text_field_tag :query, '', placeholder: 'Search topic: eg: football', class: 'form-control'
+            span.input-group-btn
+              button.btn.btn-default type="submit"  Go
       ul.nav.navbar-nav.navbar-right
         - unless user_signed_in?
           li

@@ -15,7 +15,7 @@ li.list-group-item.post-item
           = link_to 'Edit', edit_post_path(post), role: 'menuitem'
 
         li role='presentation'
-          = link_to 'Delete', posts_path(post), method: :delete, role: 'menuitem'
+          = link_to 'Delete', post_path(post), method: :delete, role: 'menuitem'
 
         li role='presentation'
           = link_to 'Report', '#', method: :delete, role: 'menuitem'

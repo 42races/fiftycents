@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @reply = Post.new(reply_to: @post.id)
+    @reply   = Post.new(reply_to: @post.id)
     @replies = @post.replies
   end
 
